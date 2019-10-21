@@ -1,0 +1,27 @@
+{
+	"name": "ArtSis",
+	"main": "main.js",
+	"chromium-args": "--mixed-context",
+	"scripts": {
+		"start": "nw"
+	},
+	"dependencies": {
+		"firebird": "github:mjschutz/node-firebird-libfbclient",
+		"nw": "0.41.3-sdk",
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.4",
+		"@babel/node": "^7.6.3",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/preset-env": "^7.6.3",
+		"@babel/preset-react": "^7.6.3",
+		"babel-loader": "^8.0.6",
+		"css-loader": "^3.2.0",
+		"file-loader": "^4.2.0",
+		"html-webpack-plugin": "^3.2.0",
+		"style-loader": "^1.0.0",
+		"webpack": "^4.41.2"
+	}
+}
