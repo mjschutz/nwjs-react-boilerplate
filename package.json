@@ -1,5 +1,5 @@
 {
-	"name": "ArtSis",
+	"name": "NWjsBoilerplate",
 	"main": "main.js",
 	"chromium-args": "--mixed-context",
 	"scripts": {
