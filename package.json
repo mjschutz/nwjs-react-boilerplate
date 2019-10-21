@@ -6,7 +6,6 @@
 		"start": "nw"
 	},
 	"dependencies": {
-		"firebird": "github:mjschutz/node-firebird-libfbclient",
 		"nw": "0.41.3-sdk",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2"
