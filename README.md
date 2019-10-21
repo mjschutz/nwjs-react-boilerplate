@@ -4,4 +4,4 @@ NW.js Boilerplate project that run Webpack, create a static/index.html and open 
 
 ### Installing
 
-Fork this repository and rename it to match your project.
+Click on **Use this template** to create a new repository from this project.
