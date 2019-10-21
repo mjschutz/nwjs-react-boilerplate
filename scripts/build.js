@@ -2,9 +2,9 @@ const webpack = require('webpack');
 const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var pjson = require('./package.json');
+var pjson = require('../package.json');
 
-const staticDir = path.resolve(__dirname, 'static');
+const staticDir = path.resolve(__dirname, '../static');
 
 if (!fs.existsSync(staticDir)){
     fs.mkdirSync(staticDir);
@@ -44,8 +44,8 @@ webpack({
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: pjson.name,
-			publicPath: path.resolve(__dirname, 'public'),
-			template:'public/index.html',
+			publicPath: path.resolve(__dirname, '../public'),
+			template: path.resolve(__dirname, '../public') + '/index.html',
 			filename: 'index.html'
 		})
 	],
@@ -76,11 +76,11 @@ webpack({
 	}
 }, (err, stats) => { // Stats Object
 	if (err || stats.hasErrors()) {
-		nw.Window.open('about:blank', {}, function(win) {
-			win.window.document.write('<pre>', stats, '</pre>');
-		});
+		console.log(stats)
+		console.log("\nbuild finished with errors: ", err);
 		return;
 	}
 
-	nw.Window.open('./static/index.html', {}, function(win) {});
+	console.log(stats)
+	console.log("\nbuild finished without errors!", );
 });

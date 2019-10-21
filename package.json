@@ -1,9 +1,12 @@
 {
 	"name": "NWjsBoilerplate",
-	"main": "main.js",
+	"version": "0.0.1",
+	"main": "static/index.html",
 	"chromium-args": "--mixed-context",
 	"scripts": {
-		"start": "nw"
+		"start": "nw",
+		"debug": "node scripts/build.js && echo Running Project && nw",
+		"build": "node scripts/build.js && nwbuild -p win32,win64,osx32,osx64,linux32,linux64 ."
 	},
 	"dependencies": {
 		"nw": "0.41.3-sdk",
@@ -20,6 +23,7 @@
 		"css-loader": "^3.2.0",
 		"file-loader": "^4.2.0",
 		"html-webpack-plugin": "^3.2.0",
+		"nw-builder": "^3.5.7",
 		"style-loader": "^1.0.0",
 		"webpack": "^4.41.2"
 	}
