@@ -1,4 +1,6 @@
 static/
+build/
+cache/
 package-lock.json
 
 # OSX

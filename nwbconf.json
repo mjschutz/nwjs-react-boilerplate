@@ -1,0 +1,21 @@
+{
+	"files": [
+		"**/**",
+		"!**/node_modules/webpack/**/**",
+		"!**/nwbconfig.json",
+		"!**/node_modules/react/**/**",
+		"!**/node_modules/react-dom/**/**",
+		"!**/node_modules/*-loader/**/**",
+		"!**/node_modules/@babel*/**/**",
+		"!**/node_modules/nw/**/**",
+		"!**/node_modules/nw-builder/**/**",
+		"!**/node_modules/html-webpack-plugin/**/**",
+		"!**/scripts/**/**",
+		"!**/build/**/**",
+		"!**/cache/**/**",
+		"!**/src/**/**"
+	],
+	"production": true,
+	"platforms": [ "win32", "win64", "osx64", "linux32", "linux64" ],
+	"version": "0.41.3"
+}

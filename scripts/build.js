@@ -80,7 +80,38 @@ webpack({
 		console.log("\nbuild finished with errors: ", err);
 		return;
 	}
+	
+	let ai = 2;
+	let nwbconf = require('../nwbconf.json');
+	
+	if (process.argv[ai] == '-d') {
+		ai++;
+		nwbconf.production = false;
+	}
+	
+	var NwBuilder = require('nw-builder');
+	var nw = new NwBuilder(nwbconf);
+	
+	if (process.argv[ai] == '-r') {
+		nw.run().then(function () {
+		   console.log('all done!');
+		}).catch(function (error) {
+			console.error(error);
+		});
+	} else if (process.argv[ai] == '-p') {
+		let p = process.argv.slice(ai+1);
+		
+		if (p.length) {
+			nwbconf.platforms = p;
+		}
+		
+		// Log stuff you want
+		nw.on('log',  console.log);
 
-	console.log(stats)
-	console.log("\nbuild finished without errors!", );
+		nw.build().then(function () {
+		   console.log('all done!');
+		}).catch(function (error) {
+			console.error(error);
+		});
+	}
 });
