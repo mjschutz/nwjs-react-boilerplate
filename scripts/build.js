@@ -41,6 +41,9 @@ webpack({
 		path: staticDir,
 		filename: 'index.js'
 	},
+    resolve: {
+        extensions: [ '.mjs', '.js', '.json', '.node' ]
+    },
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: pjson.name,
@@ -52,14 +55,18 @@ webpack({
 	module: {
 		rules: [
 			{
-				test: /\.(js|jsx)$/,
+				test: /\.js(x)?$/,
 				exclude: /node_modules/,
-				use: {
-					loader: "babel-loader",
-					options: {
-						presets: ["@babel/preset-env", "@babel/preset-react"]
+				use: [ {
+						loader: "babel-loader",
+						options: {
+							presets: ["@babel/preset-env", "@babel/preset-react"]
+						}
+					},
+					{
+						loader: "eslint-loader"
 					}
-				}
+				]
 			},
 			{
 				test: /\.css$/,
@@ -67,6 +74,10 @@ webpack({
 					"style-loader",
 					"css-loader"
 				]
+			},
+			{
+				test: /\.node$/,
+				use: 'node-loader'
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,
