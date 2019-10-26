@@ -22,7 +22,7 @@
 		"file-loader": "^4.2.0",
 		"html-webpack-plugin": "^3.2.0",
 		"node-loader": "^0.6.0",
-		"nw": "^0.41.3-sdk",
+		"nw": "^0.42.0-sdk",
 		"nw-builder": "^3.5.7",
 		"react": "^16.10.2",
 		"react-dom": "^16.10.2",
