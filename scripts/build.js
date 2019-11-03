@@ -35,6 +35,7 @@ if (!fs.existsSync(staticDir)){
 
 webpack({
 	mode: 'development',
+	target: 'node',
 	entry: './src/index.js',
 	output: {
 		publicPath: staticDir + '/',
